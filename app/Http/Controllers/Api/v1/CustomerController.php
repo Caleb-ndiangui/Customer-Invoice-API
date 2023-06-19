@@ -26,7 +26,7 @@ class CustomerController extends Controller
 
     $customers =customer::where($FilterItems);
     if($includeinvoices){
-        $customers = $customers -> with('invoice') ;
+        $customers = $customers -> with('invoice');
     }
 
     return new CustomerCollection($customers->paginate()->appends($request->query()));
